@@ -49,3 +49,5 @@ while (op != 6)
 }
 Console.WriteLine("\nPrograma finalizado");
 
+//Segundo ejercicio 
+
