@@ -7,6 +7,7 @@ public class Empleado{
     private char genero;
     private DateTime fechaIngreso;
     private double sueldoBasico;
+    private string trab;
     public enum Cargo{Auxiliar,Administrativo, Ingeniero, Especialista, Investigador}
 
     //Propiedades
@@ -17,9 +18,10 @@ public class Empleado{
     public char Genero { get => genero; set => genero = value; }
     public DateTime FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
     public double SueldoBasico { get => sueldoBasico; set => sueldoBasico = value; }
+    public string Trab { get => trab; set => trab = value; }
 
     //Constructor
-    public Empleado(DateTime fecha,string name, string ape,char est,char gen,DateTime fechaIng,double sueldoB)
+    public Empleado(DateTime fecha,string name, string ape,char est,char gen,DateTime fechaIng,double sueldoB,string trabajo)
     {
         FechaNacimiento1=fecha;
         Apellido1=ape;
@@ -28,6 +30,7 @@ public class Empleado{
         Genero=gen;
         FechaIngreso=fechaIng;
         SueldoBasico=sueldoB;
+        Trab=trabajo;
     }
 
     //Funciones
@@ -99,7 +102,13 @@ public class Empleado{
         return total;
         
     }
-
+    public int Jubilacion(){
+        if(genero=='H') {
+            return 65-Edad();
+        }else{
+            return 60-Edad();
+        }
+    }
 }
 
 
